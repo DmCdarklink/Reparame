@@ -120,6 +120,10 @@ router.get('/details/:Indice_Solicitud', isLoggedIn, async (req, res) => {
     res.render('links/details', {solicitud : solicitud [0]});
 });
 
+function reverseString(str) {
+    return str
+}
+
 router.get('/details_tec/:Solicitud_Tecnico', isLoggedIn, async (req, res) => {
     const { Solicitud_Tecnico } = req.params;
     const sol_usu = await pool.query(`SELECT * FROM rep_solicitudservicio
@@ -127,6 +131,16 @@ router.get('/details_tec/:Solicitud_Tecnico', isLoggedIn, async (req, res) => {
     WHERE rep_solicitudservicio.Indice_Solicitud = ${Solicitud_Tecnico}`);
     console.log(sol_usu)
 
+    const datesol = new Date(sol_usu[0].Fecha_Solicitud)
+
+    let date = new Date(datesol)
+
+    let day = date.getDate()
+    let month = date.getMonth() + 1
+    let year = date.getFullYear()
+    sol_usu[0].Fecha_Solicitud = (`${day}-${month}-${year}`)
+    //var fecha = date.toLocaleDateString("es-US");
+    //fecha = fecha.split('00:')[0];
     res.render('links/details_tec', { sol_usu: sol_usu[0] });
 });
 

@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\lib",
     "\\src\\public",
     "\\src\\public\\css",
     "\\src\\routes",
     "\\src\\views",
     "\\src\\views\\auth",
+    "\\src\\views\\layouts",
     "\\src\\views\\links",
     "\\src\\views\\partials"
   ],
-  "SelectedNode": "\\src\\lib\\passport.js",
+  "SelectedNode": "\\src\\routes\\links.js",
   "PreviewInSolutionExplorer": false
 }

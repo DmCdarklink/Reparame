@@ -182,3 +182,5 @@ INSERT INTO `rep_tiposervicio` (`Indice`, `Descripcion`) VALUES
 INSERT INTO `rep_tipousuario` (`Indice`, `Descripcion`) VALUES
 (1, 'Cliente'),
 (2, 'Técnico');
+
+Insert into `rep_estadosservicios` values (1, 'Ingresada'),(2, 'Presupuesto'),(3, 'Rechazada'),(4, 'Finalizada');
