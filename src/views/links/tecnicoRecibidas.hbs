@@ -1,0 +1,28 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each recibidas}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    
+                        <h3 class="card-tittle text-uppercase">
+                            {{Titulo_Servicio}}
+                        </h3>
+                    <p class="m-2">{{Descripcion_Solicitud}}</p>
+                    <p class="m-2">{{timeago Fecha_Solicitud_Servicio}}</p>
+                    <a href="/links/delete/{{Indice_Solicitud}}" class="btn btn-danger">Rechazar Trabajo</a>
+                    <a href="/links/details_tec/{{Indice_Solicitud}}" class="btn btn-secondary">Detalles Trabajo</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No tiene ninguna Solicitud en Proceso</p>
+                <a href="/links/initsearch" class="btn btn-primary m-4">Buscar un Servicio</a>
+            </div>
+        </div>
+       
+        {{/each}}
+    </div>
+</div> 

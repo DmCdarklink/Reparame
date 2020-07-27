@@ -1,0 +1,38 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each search}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+
+                    <h3 class="card-tittle text-uppercase">
+                        {{Nombre_Negocio}}
+                    </h3>
+                    <div>
+                        {{#if rating}}
+                        {{#each rating}}
+                        <span class="fa fa-star {{this}}"></span>
+                        {{/each}}
+                        {{/if}}
+                    </div>
+                    <p class="m-2">{{Descripcion_Negocio}}</p>
+
+                    {{!-- <p class="m-2">{{timeago Fecha_Solicitud_Servicio}}</p> --}}
+                    <a href="/links/add/{{id_proveedor}}" class="btn btn-primary">Solicitar</a>
+                    <a href="/links/initsearch" class="btn btn-secondary">Volver</a>
+
+
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No tiene ninguna Solicitud en Proceso</p>
+                <a href="/links/initsearch" class="btn btn-primary m-4">Buscar un Servicio</a>
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+</div> 

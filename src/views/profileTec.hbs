@@ -1,0 +1,46 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                {{#if user.posted}}
+                <div class="card-body">
+                    <h3>Bienvenida/o {{user.Nombres}} </h3>
+                    <h4>{{user.Email}} </h4>
+                    <a href="/links/recibidas" class="btn btn-primary m-4">
+                        Solicitudes Recibidas
+                    </a>
+                </div>
+                {{else}}
+                <div class="card-body">
+                    <h3>Bienvenida/o {{user.Nombres}} </h3>
+                    <h4>{{user.Email}} </h4>
+                    <form action="/agregarPost" method="post">
+                        <div class="form-group">
+                            <input type="text" name="Nombre_Negocio" placeholder="Ingrese Nombre de su negocio"
+                                class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Telefono_Negocio" placeholder="Ingrese Telefono de su negocio"
+                                class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Descripcion_Negocio">Describa su problema</label>
+                            <textarea class="form-control" name="Descripcion_Negocio" id="Descripcion_Negocio"
+                                rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <select id="Tipo_Servicio" name="Tipo_Servicio" class="form-control">
+                                {{#each servicio}}
+                                <option value="{{this.Indice}}">{{this.Descripcion}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Agregar</button>
+                    </form>
+                </div>
+                {{/if}}
+
+            </div>
+        </div>
+    </div>
+</div>

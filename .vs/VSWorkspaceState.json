@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\lib",
+    "\\src\\public",
+    "\\src\\public\\css",
+    "\\src\\routes",
+    "\\src\\views",
+    "\\src\\views\\auth",
+    "\\src\\views\\links",
+    "\\src\\views\\partials"
+  ],
+  "SelectedNode": "\\src\\lib\\passport.js",
+  "PreviewInSolutionExplorer": false
+}

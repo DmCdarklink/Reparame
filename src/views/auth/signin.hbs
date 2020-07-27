@@ -1,0 +1,63 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div  class="card-header">
+                    <h3>Ingresa como cliente</h3>
+                </div>
+                <div class="card-body">
+                    <img src="/img/logo.png" alt="Logo Reparame" class="card-img-top mx-auto m-2 rounded-square w-50">
+                    <form action="/signin" class="needs-validation" novalidate method="POST"> 
+                        
+                        <div class="form-group">
+                        <input type="email" class="form-control" name="Email" placeholder="Ingrese su correo"required>
+                        </div>
+
+                        <div class="form-group">
+                            
+                            <input type="password" name="Password" placeholder="Ingrese su contraseña" class="form-control" aria-describedby="passwordHelpBlock" required>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                            Tu contraseña debe contener al menos 8 letras o números sin caracteres especiales
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                No soy un robot
+                            </label>
+                            <div class="invalid-feedback">
+                                Debes completar la validación
+                            </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Ingresar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
