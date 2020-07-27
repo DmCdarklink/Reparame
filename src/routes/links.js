@@ -55,7 +55,7 @@ router.get('/pendientes', isLoggedIn, async (req, res) => {
 
 //ruta para almacenar las solicitudes aceptadas del cliente
 router.get('/aceptadas', isLoggedIn, async (req, res) => {
-    const solicitudes = await pool.query('SELECT * FROM rep_solicitudservicio WHERE Id_Usuario = ?', [req.user.Id_Usuario]);
+    const solicitudes = await pool.query('SELECT * FROM rep_solicitudservicio WHERE Indice_Usuario = ?', [req.user.Id_Usuario]);
     const links = []
     for (let i = 0; i < solicitudes.length; i++) {
         if (solicitudes[i].estado === 1) {
